@@ -40,3 +40,9 @@ I work at Dutch Bros, and one thing I've noticed is that customers, especially n
 -Git and GitHub: To save my work and keep track of changes as I build everything.
 
 I won't need any outside APIs since I'll be using my own knowledge from working at Dutch Bros, along with the drink menu.
+
+**System Diagram**
+
+This is the flowchart I made for my Dutch Bros Drink Matchmaker. It shows how customers go from picking their drink base and flavors to getting a recommendation and customizing their final drink.
+
+![Dutch Bros System Diagram](docs/DutchBrosSystemDiagram.drawio.png)
