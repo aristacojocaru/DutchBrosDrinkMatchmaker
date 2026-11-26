@@ -34,6 +34,26 @@ public class Main {
         }
 
         System.out.println("You picked " + base + "!");
+
+        System.out.println("Here are your flavor options:");
+
+        String[] flavors;
+
+        if (base.equals("Coffee")) {
+            flavors = new String[]{"Vanilla", "Caramel", "Chocolate",
+                    "Hazelnut", "White Chocolate", "Irish Cream",
+                    "Peppermint"};
+        } else {
+            flavors = new String[]{"Strawberry", "Blue Raspberry",
+                    "Peach", "Passion Fruit", "Coconut", "Pomegranate",
+                    "Raspberry", "Watermelon", "Blackberry", "Vanilla",
+                    "Lime"};
+        }
+
+        for (int i = 0; i < flavors.length; i++) {
+            System.out.println((i + 1) + ". " + flavors[i]);
+        }
+
         scanner.close();
     }
 }
