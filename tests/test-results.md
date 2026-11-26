@@ -68,3 +68,39 @@ Next step: create the algorithm that matches the customer's
 selected flavors to an actual Dutch Bros drink.
 
 
+## 11/26 - Drink Matching Algorithm and Customer Choice
+
+Added the algorithm that matches the customer's selected
+flavors to an existing Dutch Bros drink.
+
+- Selected Vanilla and Caramel and got Golden Eagle.
+- Selected Strawberry and Peach and originally got
+  Double Rainbro as the closest match.
+- Realized customers might not want extra flavors added,
+  so I added the option to accept the recommendation
+  or keep their original flavors.
+- Added Rose City (Strawberry and Peach) to the CSV,
+  bringing the database to 20 recipes.
+- Tested Rose City and got an exact match.
+- Accepted Shark Attack and got all four recipe flavors.
+- Declined Shark Attack and kept only Blue Raspberry
+  and Coconut.
+- Entered 9, "hello", and a blank response when asked
+  to accept the recommendation. All were rejected.
+- Selected Strawberry, Peach, and Coconut for a Soda
+  and got an exact match for Double Rainbro.
+- Tested a missing CSV file again. The program returned
+  a custom drink instead of crashing.
+- Tested Vanilla and Coconut in a coffee. The program
+  returned a custom coffee instead of a fruity recipe.
+- Tested Caramel and Vanilla in reverse order and
+  still got Golden Eagle.
+
+All 14 planned checks passed throughout development.
+The final regression test also passed.
+
+One small thing to fix later is making the final drink
+heading consistent for custom drinks.
+
+Next step: add size, preparation, and milk options.
+

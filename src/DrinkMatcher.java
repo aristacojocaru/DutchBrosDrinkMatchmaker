@@ -34,4 +34,46 @@ public class DrinkMatcher {
 
         return drinks;
     }
+
+    public static Drink findMatch(String base,
+                                  ArrayList<String> selectedFlavors,
+                                  ArrayList<Drink> drinks) {
+
+        Drink bestMatch = null;
+        double bestScore = 0;
+
+        for (Drink drink : drinks) {
+
+            // Only compare drinks with the correct base.
+            if (base.equals("Coffee")) {
+                if (!drink.base.equals("Coffee")) {
+                    continue;
+                }
+            } else {
+                if (!drink.base.equals("Fruity")) {
+                    continue;
+                }
+            }
+
+            int matches = 0;
+
+            for (String flavor : drink.flavors) {
+                if (selectedFlavors.contains(flavor)) {
+                    matches++;
+                }
+            }
+
+            // Give higher scores to drinks with more matching flavors.
+            double score = (double) matches /
+                    (selectedFlavors.size() + drink.flavors.length - matches);
+
+            if (matches >= 2 && score > bestScore) {
+                bestScore = score;
+                bestMatch = drink;
+            }
+        }
+
+        return bestMatch;
+    }
+
 }
