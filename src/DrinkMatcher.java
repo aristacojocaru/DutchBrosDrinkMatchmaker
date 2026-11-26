@@ -76,4 +76,29 @@ public class DrinkMatcher {
         return bestMatch;
     }
 
+    public static ArrayList<Drink> findMatches(String base,
+                                               ArrayList<String> selectedFlavors,
+                                               ArrayList<Drink> drinks) {
+
+        ArrayList<Drink> recommendations = new ArrayList<>();
+        ArrayList<Drink> remainingDrinks = new ArrayList<>(drinks);
+
+        // Find up to three matching drinks.
+        for (int i = 0; i < 3; i++) {
+
+            Drink match = findMatch(base, selectedFlavors, remainingDrinks);
+
+            if (match == null) {
+                break;
+            }
+
+            recommendations.add(match);
+
+            // Remove the match so it cannot be recommended twice.
+            remainingDrinks.remove(match);
+        }
+
+        return recommendations;
+    }
+
 }

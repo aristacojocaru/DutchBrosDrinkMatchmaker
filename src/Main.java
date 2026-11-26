@@ -92,52 +92,63 @@ public class Main {
 
         ArrayList<Drink> drinks = DrinkMatcher.loadDrinks();
 
-        Drink match = DrinkMatcher.findMatch(base, selectedFlavors, drinks);
+        ArrayList<Drink> recommendations =
+                DrinkMatcher.findMatches(base, selectedFlavors, drinks);
 
-        System.out.println("\nYour Drink Recommendation:");
+        Drink match = null;
 
-        if (match == null) {
-            System.out.println("Custom " + base);
-            System.out.println("Flavors: " + selectedFlavors);
+        System.out.println("\nYour Drink Recommendations:");
+
+        if (recommendations.isEmpty()) {
+            System.out.println("No matching recipes found!");
+            System.out.println("Let's create a custom drink instead.");
         } else {
-            boolean exactMatch = match.flavors.length == selectedFlavors.size()
-                    && selectedFlavors.containsAll(java.util.Arrays.asList(match.flavors));
+            Drink bestMatch = recommendations.get(0);
+
+            boolean exactMatch = bestMatch.flavors.length == selectedFlavors.size()
+                    && selectedFlavors.containsAll(java.util.Arrays.asList(bestMatch.flavors));
 
             if (exactMatch) {
+                match = bestMatch;
                 System.out.println("We found an exact match!");
             } else {
-                System.out.println("We found your closest match!");
-            }
+                System.out.println("Here are your closest matches!");
 
-            System.out.println(match.name + " (" + base + ")");
-            System.out.println("Flavors: " + String.join(", ", match.flavors));
+                for (int i = 0; i < recommendations.size(); i++) {
+                    Drink drink = recommendations.get(i);
 
-            if (!exactMatch) {
-                System.out.println("\nWould you like to try our recommendation?");
-                System.out.println("1. Try " + match.name);
-                System.out.println("2. Keep my original flavors");
+                    System.out.println((i + 1) + ". " + drink.name);
+                    System.out.println("   Flavors: " + String.join(", ", drink.flavors));
+                }
+
+                int customOption = recommendations.size() + 1;
+
+                System.out.println(customOption + ". Keep my original flavors");
+                System.out.println("\nWhich drink would you like?");
 
                 String decision = scanner.nextLine();
 
-                while (!decision.equals("1") && !decision.equals("2")) {
-                    System.out.println("Please choose 1 or 2.");
+                while (!decision.matches("[1-" + customOption + "]")) {
+                    System.out.println("Please choose a number from 1-" + customOption + ".");
                     decision = scanner.nextLine();
                 }
 
-                if (decision.equals("2")) {
-                    match = null;
+                int selectedOption = Integer.parseInt(decision);
+
+                if (selectedOption != customOption) {
+                    match = recommendations.get(selectedOption - 1);
                 }
             }
+        }
 
-            System.out.println("\nYour selected drink:");
+        System.out.println("\nYour selected drink:");
 
-            if (match == null) {
-                System.out.println("Custom " + base);
-                System.out.println("Flavors: " + selectedFlavors);
-            } else {
-                System.out.println(match.name + " (" + base + ")");
-                System.out.println("Flavors: " + String.join(", ", match.flavors));
-            }
+        if (match == null) {
+            System.out.println("Custom " + base);
+            System.out.println("Flavors: " + String.join(", ", selectedFlavors));
+        } else {
+            System.out.println(match.name + " (" + base + ")");
+            System.out.println("Flavors: " + String.join(", ", match.flavors));
         }
 
         System.out.println("\nWhat size would you like?");
