@@ -125,3 +125,27 @@ on the drink base.
 
 Next step: finish the remaining project requirements.
 
+## 11/26 - Multiple Drink Recommendations
+
+Created a separate branch called multiple-recommendations
+to improve the drink matching feature. Instead of only
+suggesting one drink, the program can now recommend up
+to three drinks.
+
+- Tested an exact match with Golden Eagle.
+- Tested multiple recommendations and got Rose City,
+  Double Rainbro, and Pink Flamingo.
+- Selected the third recommendation and successfully
+  ordered a Pink Flamingo.
+- Chose to keep my original flavors instead of accepting
+  a recommendation.
+- Entered 9, 0, "hello", and a blank input. All were
+  rejected and I was able to try again.
+- Tested Vanilla and Coconut coffee, which had no
+  matching recipe. The program created a custom drink.
+
+All six recommendation tests passed.
+
+Next step: commit the new feature and merge the branch
+into main.
+
