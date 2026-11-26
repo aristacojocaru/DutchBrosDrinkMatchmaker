@@ -104,3 +104,24 @@ heading consistent for custom drinks.
 
 Next step: add size, preparation, and milk options.
 
+## 11/26 - Drink Customization and Final Order
+
+Added size, preparation, milk, tea type, and dirty soda options.
+Also added a final order summary so customers can see their
+entire drink before ordering.
+
+- Tested a small blended Golden Eagle with default milk.
+- Tested oat milk and almond milk substitutions.
+- Tested both black and green tea.
+- Tested a medium Double Rainbro Soda with sweet cream.
+- Tested a small custom Vanilla and Kiwi Soda without sweet cream.
+- Tested a medium iced Electric Berry Rebel.
+- Tested a large blended Tiger's Blood Lemonade.
+- Tested a large iced Rose City Green Tea.
+
+All five drink bases successfully produced a final order.
+The customization options displayed correctly depending
+on the drink base.
+
+Next step: finish the remaining project requirements.
+
