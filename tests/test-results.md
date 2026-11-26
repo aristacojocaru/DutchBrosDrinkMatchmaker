@@ -29,3 +29,20 @@ All the flavor menus worked. I also tried selecting a flavor before realizing I 
 Next step: let customers actually choose 2-3 flavors.
 
 
+
+## 11/26 - Choosing Flavors
+
+Added the option to choose 2 or 3 flavors and used an ArrayList to keep track of the customer's choices.
+
+- Tried vanilla and peppermint with coffee.
+- Tried strawberry, peach, and coconut with a Rebel.
+- Tried choosing 1 and 4 flavors, but the program only accepted 2 or 3.
+- Tried picking strawberry twice and it made me choose a different flavor.
+- Tested random numbers, letters, and blank inputs.
+- Made sure flavors 10 and 11 could still be selected.
+
+Everything worked as expected.
+
+Next step: start putting together the actual drink database so the program can recommend drinks.
+
+
