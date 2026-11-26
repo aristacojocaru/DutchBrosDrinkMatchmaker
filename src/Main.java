@@ -43,12 +43,14 @@ public class Main {
         if (base.equals("Coffee")) {
             flavors = new String[]{"Vanilla", "Caramel", "Chocolate",
                     "Hazelnut", "White Chocolate", "Irish Cream",
-                    "Peppermint"};
+                    "Peppermint", "Chocolate Macadamia Nut",
+                    "Coconut", "Cinnamon"};
         } else {
             flavors = new String[]{"Strawberry", "Blue Raspberry",
                     "Peach", "Passion Fruit", "Coconut", "Pomegranate",
                     "Raspberry", "Watermelon", "Blackberry", "Vanilla",
-                    "Lime"};
+                    "Lime", "Orange", "Grapefruit", "Kiwi",
+                    "Banana", "White Chocolate"};
         }
 
         for (int i = 0; i < flavors.length; i++) {
@@ -87,6 +89,9 @@ public class Main {
         }
 
         System.out.println("Your selected flavors: " + selectedFlavors);
+
+        ArrayList<Drink> drinks = DrinkMatcher.loadDrinks();
+        System.out.println("Loaded " + drinks.size() + " drinks from the database.");
 
         scanner.close();
     }

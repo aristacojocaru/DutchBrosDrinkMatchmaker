@@ -46,3 +46,25 @@ Everything worked as expected.
 Next step: start putting together the actual drink database so the program can recommend drinks.
 
 
+## 11/26 - Drink Database and Expanded Flavors
+
+Added 19 drink recipes to a CSV file and expanded the flavor
+options to 10 coffee flavors and 16 fruity flavors.
+
+- Initially got 4 compilation errors because the Drink class
+  was missing. Fixed this by implementing Drink.java.
+- Selected Blackberry and Vanilla and successfully loaded
+  all 19 drinks.
+- Tested Chocolate Macadamia Nut and Cinnamon. Both worked.
+- Tested Orange, Kiwi, and White Chocolate. All three worked.
+- Temporarily renamed drinks.csv to see what would happen
+  if the file was missing. The program displayed an error
+  message instead of crashing and loaded 0 drinks.
+- Restored the CSV file after testing.
+
+All tests passed after fixing the compilation error.
+
+Next step: create the algorithm that matches the customer's
+selected flavors to an actual Dutch Bros drink.
+
+
